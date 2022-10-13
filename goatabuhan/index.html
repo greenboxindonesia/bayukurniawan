@@ -1,553 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!--projecttitle--><title>Goa Tabuhan</title><!--projecttitle-end-->
-		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
-		
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		
-		<!-- Insert this line above script imports  -->
-		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-		
-		<script src="imagedata.js"></script>
-		<script src="jquery.js"></script>
-		<script src="three.min.js"></script>
-		<script src="panolens.min.js"></script>
-		
-		<!-- Insert this line after script imports -->
-		<script>if (window.module) module = window.module;</script>
-		
-		<style>
-		
-			
-						
-			/* SCROLLBAR STYLING */
-			/* width */
-			::-webkit-scrollbar {
-				width: 0.25em;
-				height: 0.25em;
-			}
-			/* Track */
-			::-webkit-scrollbar-track {
-				background: #2c3643; 
-			}
-			/* Handle */
-			::-webkit-scrollbar-thumb {
-				background: #0d9e59; 
-				transition: background .5s;
-			}
-			/* Handle on hover */
-			::-webkit-scrollbar-thumb:hover {
-				background: #00e075; 
-			}
-
-
-			html, body {
-				margin: 0;
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-				background-color: #000;
-				color; black;
-			}
-
-			a:link, a:visited{
-				color: #bdc3c7;	
-			}
-
-			.fullwrapper{
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background-color: black;
-			}
-			
-			#container {
-                width: 100%;
-                height: 100%;
-            }
-			
-			#tmp{
-				position: fixed;
-				top: 0;
-				left: 0; 
-				right: 0;
-				bottom: 0;
-				padding: 3em;
-				background-color: rgba(0,0,0,.5);
-				backdrop-filter: blur(5px);
-				display: none;
-			}
-		</style>
-	</head>
-	<body id="body">
-	    <div id="container" style="color: black;"></div>
-    	
-		
-		
-		<!--customhtml--><div class='customhotspot' id='GT_1'><div onclick='chclickinfospotGT_12();' id='infospotGT_12' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotGT_13();' id='infospotGT_13' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='GT_2'></div><div class='customhotspot' id='GT_3'><div onclick='chclickinfospotGT_33();' id='infospotGT_33' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotGT_34();' id='infospotGT_34' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotGT_35();' id='infospotGT_35' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotGT_36();' id='infospotGT_36' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='GT_4'></div><div class='customhotspot' id='GT_5'><div onclick='chclickinfospotGT_53();' id='infospotGT_53' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='GT_6'><div onclick='chclickinfospotGT_63();' id='infospotGT_63' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='GT_7'></div><div class='customhotspot' id='GT_8'></div><!--customhtml-end-->
-		
-		<div id="tmp">
-			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
-			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
-		</div>
-
-		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
-    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
-    			<!--loadingtext-->Loading...<!--loadingtext-end-->
-    		</div>
-    	</div>
-		
-    	<script>
-			
-            var container = document.querySelector( '#container' );
-			/*panolens*/
-var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
-/*panolens-end*/
-			
-			viewer.addUpdateCallback(function(){});
-			
-			/*panoramas*/
-var GT_1 = new PANOLENS.ImagePanorama( "panoramas/GT_1.jpg" );
-			GT_1.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_1.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_1.addEventListener('click', function(e){
-			});
-
-var infospotGT_10 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_10.position.set( 4640.22, -234.59, 1819.15 );
-					GT_1.add(infospotGT_10);
-infospotGT_10.addEventListener('click', function(){
-ChangePanorama('GT_2');
-});
-var infospotGT_11 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_11.position.set( 4406.30, -1152.01, -2053.27 );
-					GT_1.add(infospotGT_11);
-infospotGT_11.addEventListener('click', function(){
-ChangePanorama('GT_3');
-});
-var infospotGT_12 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_12.position.set( 4899.18, -335.12, -902.22 );
-					infospotGT_12.visible = false;
-					GT_1.add(infospotGT_12);
-infospotGT_12.addEventListener('click', function(){
-window.open( 'https://goo.gl/maps/D83mSMr3hZLk8E9Y8', '_blank');
-});
-var infospotGT_13 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_13.position.set( 3865.67, 510.03, 3113.91 );
-					infospotGT_13.visible = false;
-					GT_1.add(infospotGT_13);
-infospotGT_13.addEventListener('click', function(){
-showMedia(4, 'pdf/dataGoa_Tabuhan.pdf');
-});
-viewer.add( GT_1 );
-var GT_2 = new PANOLENS.ImagePanorama( "panoramas/GT_2.jpg" );
-			GT_2.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_2.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_2.addEventListener('click', function(e){
-			});
-
-var infospotGT_20 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_20.position.set( -2234.14, -2637.40, -3605.63 );
-					GT_2.add(infospotGT_20);
-infospotGT_20.addEventListener('click', function(){
-ChangePanorama('GT_1');
-});
-var infospotGT_21 = new PANOLENS.Infospot( 512, hotspotIcons[7].data, true );
-					infospotGT_21.position.set( 2331.30, -2159.75, -3851.27 );
-					GT_2.add(infospotGT_21);
-infospotGT_21.addEventListener('click', function(){
-ChangePanorama('GT_3');
-});
-var infospotGT_22 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_22.position.set( 1764.82, -971.41, 4564.82 );
-					GT_2.add(infospotGT_22);
-infospotGT_22.addEventListener('click', function(){
-ChangePanorama('GT_4');
-});
-viewer.add( GT_2 );
-var GT_3 = new PANOLENS.ImagePanorama( "panoramas/GT_3.jpg" );
-			GT_3.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_3.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_3.addEventListener('click', function(e){
-			});
-
-var infospotGT_30 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
-					infospotGT_30.position.set( -1998.04, -393.17, 4564.81 );
-					GT_3.add(infospotGT_30);
-infospotGT_30.addEventListener('click', function(){
-ChangePanorama('GT_2');
-});
-var infospotGT_31 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
-					infospotGT_31.position.set( -4229.50, -798.58, 2536.09 );
-					GT_3.add(infospotGT_31);
-infospotGT_31.addEventListener('click', function(){
-ChangePanorama('GT_1');
-});
-var infospotGT_32 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_32.position.set( 4885.74, -853.90, 587.10 );
-					GT_3.add(infospotGT_32);
-infospotGT_32.addEventListener('click', function(){
-ChangePanorama('GT_5');
-});
-var infospotGT_33 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_33.position.set( 3369.49, -924.55, -3564.95 );
-					infospotGT_33.visible = false;
-					GT_3.add(infospotGT_33);
-infospotGT_33.addEventListener('click', function(){
-showMedia(1, 'images/Info1.jpg');
-});
-var infospotGT_34 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_34.position.set( 2067.04, -3508.78, -2896.96 );
-					infospotGT_34.visible = false;
-					GT_3.add(infospotGT_34);
-infospotGT_34.addEventListener('click', function(){
-showMedia(1, 'images/Oke1.jpg');
-});
-var infospotGT_35 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_35.position.set( 2975.38, -2998.38, -2670.22 );
-					infospotGT_35.visible = false;
-					GT_3.add(infospotGT_35);
-infospotGT_35.addEventListener('click', function(){
-showMedia(1, 'images/Oke2.jpg');
-});
-var infospotGT_36 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_36.position.set( 3625.00, -2419.11, -2433.40 );
-					infospotGT_36.visible = false;
-					GT_3.add(infospotGT_36);
-infospotGT_36.addEventListener('click', function(){
-showMedia(1, 'images/Oke3.jpg');
-});
-viewer.add( GT_3 );
-var GT_4 = new PANOLENS.ImagePanorama( "panoramas/GT_4.jpg" );
-			GT_4.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_4.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_4.addEventListener('click', function(e){
-			});
-
-var infospotGT_40 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_40.position.set( 3598.90, -1630.93, -3051.34 );
-					GT_4.add(infospotGT_40);
-infospotGT_40.addEventListener('click', function(){
-ChangePanorama('GT_2');
-});
-var infospotGT_41 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_41.position.set( 4086.14, -623.50, 2797.27 );
-					GT_4.add(infospotGT_41);
-infospotGT_41.addEventListener('click', function(){
-ChangePanorama('GT_5');
-});
-viewer.add( GT_4 );
-var GT_5 = new PANOLENS.ImagePanorama( "panoramas/GT_5.jpg" );
-			GT_5.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_5.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_5.addEventListener('click', function(e){
-			});
-
-var infospotGT_50 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_50.position.set( -3168.81, -290.51, 3844.26 );
-					GT_5.add(infospotGT_50);
-infospotGT_50.addEventListener('click', function(){
-ChangePanorama('GT_3');
-});
-var infospotGT_51 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_51.position.set( 968.61, 468.06, 4877.33 );
-					GT_5.add(infospotGT_51);
-infospotGT_51.addEventListener('click', function(){
-ChangePanorama('GT_4');
-});
-var infospotGT_52 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_52.position.set( -1125.63, -1114.18, -4735.75 );
-					GT_5.add(infospotGT_52);
-infospotGT_52.addEventListener('click', function(){
-ChangePanorama('GT_6');
-});
-var infospotGT_53 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_53.position.set( -4580.22, -947.28, -1738.07 );
-					infospotGT_53.visible = false;
-					GT_5.add(infospotGT_53);
-infospotGT_53.addEventListener('click', function(){
-window.open( 'https://drive.google.com/file/d/1I9SAbZnQYdbM3SvZeroLk2OX9DM6pf5v/view?usp=sharing', '_blank');
-});
-viewer.add( GT_5 );
-var GT_6 = new PANOLENS.ImagePanorama( "panoramas/GT_6.jpg" );
-			GT_6.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_6.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_6.addEventListener('click', function(e){
-			});
-
-var infospotGT_60 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
-					infospotGT_60.position.set( 648.17, -51.27, 4950.69 );
-					GT_6.add(infospotGT_60);
-infospotGT_60.addEventListener('click', function(){
-ChangePanorama('GT_5');
-});
-var infospotGT_61 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_61.position.set( -1462.43, -31.00, 4776.17 );
-					GT_6.add(infospotGT_61);
-infospotGT_61.addEventListener('click', function(){
-ChangePanorama('GT_3');
-});
-var infospotGT_62 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_62.position.set( 1759.32, -1742.36, -4333.43 );
-					GT_6.add(infospotGT_62);
-infospotGT_62.addEventListener('click', function(){
-ChangePanorama('GT_7');
-});
-var infospotGT_63 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
-					infospotGT_63.position.set( 3500.13, -1424.00, -3263.87 );
-					infospotGT_63.visible = false;
-					GT_6.add(infospotGT_63);
-infospotGT_63.addEventListener('click', function(){
-window.open( 'https://youtu.be/NfdbzeRgqMI', '_blank');
-});
-viewer.add( GT_6 );
-var GT_7 = new PANOLENS.ImagePanorama( "panoramas/GT_7.jpg" );
-			GT_7.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_7.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_7.addEventListener('click', function(e){
-			});
-
-var infospotGT_70 = new PANOLENS.Infospot( 512, hotspotIcons[9].data, true );
-					infospotGT_70.position.set( -3423.64, -1964.98, -3064.67 );
-					GT_7.add(infospotGT_70);
-infospotGT_70.addEventListener('click', function(){
-ChangePanorama('GT_6');
-});
-var infospotGT_71 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
-					infospotGT_71.position.set( 4347.38, -2415.04, 472.59 );
-					GT_7.add(infospotGT_71);
-infospotGT_71.addEventListener('click', function(){
-ChangePanorama('GT_8');
-});
-viewer.add( GT_7 );
-var GT_8 = new PANOLENS.ImagePanorama( "panoramas/GT_8.jpg" );
-			GT_8.addEventListener('progress', function(e){
-				$("#loading").show();
-			});
-			GT_8.addEventListener('load', function(e){
-				//$("#loading").fadeOut();
-			});
-			GT_8.addEventListener('click', function(e){
-			});
-
-var infospotGT_80 = new PANOLENS.Infospot( 512, hotspotIcons[6].data, true );
-					infospotGT_80.position.set( -2834.43, -1238.88, 3924.39 );
-					GT_8.add(infospotGT_80);
-infospotGT_80.addEventListener('click', function(){
-ChangePanorama('GT_8');
-});
-viewer.add( GT_8 );
-$(document).ready(function(){ ChangePanorama('GT_1'); });
-
-/*panoramas-end*/
-            
-			
-			function hideTemp(){
-				$("#tmp").fadeOut();
-				setTimeout(function(){
-					$("#tmpcontent").html("");
-				},1000);
-			}
-			
-			function showMedia(type, content){
-				switch(type){
-					case 1 :
-						//Image
-						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
-						$("#tmp").fadeIn();
-						break;
-					case 2 :
-						//Video
-						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
-						$("#tmp").fadeIn();
-						break;
-					case 3 :
-						//Audio
-						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
-						$("#tmp").fadeIn();
-						break;
-					case 4 :
-						//PDF
-						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
-						$("#tmp").fadeIn();
-						break;
-				}
-			}
-			
-			
-			
-			//Update Callback
-			viewer.addUpdateCallback(function(){
-				
-				/*viewerupdatecallback*/
-if(viewer.panorama == GT_1){
-ShowMyInfospot(infospotGT_12, 'infospotGT_12');
-ShowMyInfospot(infospotGT_13, 'infospotGT_13');
-}
-
-if(viewer.panorama == GT_2){
-}
-
-if(viewer.panorama == GT_3){
-ShowMyInfospot(infospotGT_33, 'infospotGT_33');
-ShowMyInfospot(infospotGT_34, 'infospotGT_34');
-ShowMyInfospot(infospotGT_35, 'infospotGT_35');
-ShowMyInfospot(infospotGT_36, 'infospotGT_36');
-}
-
-if(viewer.panorama == GT_4){
-}
-
-if(viewer.panorama == GT_5){
-ShowMyInfospot(infospotGT_53, 'infospotGT_53');
-}
-
-if(viewer.panorama == GT_6){
-ShowMyInfospot(infospotGT_63, 'infospotGT_63');
-}
-
-if(viewer.panorama == GT_7){
-}
-
-if(viewer.panorama == GT_8){
-}
-/*viewerupdatecallback-end*/
-				
-				
-			});
-			
-			
-			
-			var hotspotsvisible = true;
-			function ShowMyInfospot(hs, elid){
-				var thehs = toScreenPosition(hs);
-				if(thehs.z < 1){
-					$("#" + elid).css({
-						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
-						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
-					});
-					if(hotspotsvisible)
-						$("#" + elid).show();
-				}else{
-					$("#" + elid).hide();
-				}
-				
-			}
-			
-			function toScreenPosition(obj)
-			{
-				var vector = new THREE.Vector3();
-				var widthHalf = 0.5 * innerWidth;
-				var heightHalf = 0.5 * innerHeight;
-				
-				//obj.updateMatrixWorld();				
-				vector.setFromMatrixPosition(obj.matrixWorld);
-				
-				
-				vector.project(viewer.camera);
-
-				vector.x = ( vector.x * widthHalf ) + widthHalf;
-				vector.y = - ( vector.y * heightHalf ) + heightHalf;
-
-				
-				return { 
-					x: vector.x,
-					y: vector.y,
-					z: vector.z,
-				};
-
-			};
-			
-			var currentPanorama;
-			function ChangePanorama(panorama){
-				currentPanorama = panorama;
-				HideInfospots(); 
-				$("#loading").fadeIn();
-				//$(".customhotspot").fadeOut();
-				setTimeout(function(){
-					viewer.setPanorama(window[panorama]);
-				}, 100);
-				setTimeout(function(){
-					$("#" + panorama).fadeIn();
-					$("#loading").fadeOut();
-				}, 1000);
-				
-			}
-			
-			
-			
-			function HideInfospots(){
-				$(".customhotspot").fadeOut();
-			}
-
-			/*customjs*/
-function chclickinfospotGT_12(){ 
-window.open( 'https://goo.gl/maps/D83mSMr3hZLk8E9Y8', '_blank');
-}
-
-function chclickinfospotGT_13(){ 
-showMedia(4, 'pdf/dataGoa_Tabuhan.pdf');
-}
-
-function chclickinfospotGT_33(){ 
-showMedia(1, 'images/Info1.jpg');
-}
-
-function chclickinfospotGT_34(){ 
-showMedia(1, 'images/Oke1.jpg');
-}
-
-function chclickinfospotGT_35(){ 
-showMedia(1, 'images/Oke2.jpg');
-}
-
-function chclickinfospotGT_36(){ 
-showMedia(1, 'images/Oke3.jpg');
-}
-
-function chclickinfospotGT_53(){ 
-window.open( 'https://drive.google.com/file/d/1I9SAbZnQYdbM3SvZeroLk2OX9DM6pf5v/view?usp=sharing', '_blank');
-}
-
-function chclickinfospotGT_63(){ 
-window.open( 'https://youtu.be/NfdbzeRgqMI', '_blank');
-}
-/*customjs-end*/
-        </script>
-	</body>
-</html>

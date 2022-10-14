@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>CANDIWRINGIN</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='CWB_1'><div onclick='chclickinfospotCWB_10();' id='infospotCWB_10' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCWB_11();' id='infospotCWB_11' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CWB_2'><div onclick='chclickinfospotCWB_21();' id='infospotCWB_21' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCWB_22();' id='infospotCWB_22' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCWB_25();' id='infospotCWB_25' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CWB_3'></div><div class='customhotspot' id='CWB_4'></div><div class='customhotspot' id='CWB_5'><div onclick='chclickinfospotCWB_52();' id='infospotCWB_52' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCWB_53();' id='infospotCWB_53' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var CWB_1 = new PANOLENS.ImagePanorama( "panoramas/CWB_1.jpg" );
+			CWB_1.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CWB_1.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CWB_1.addEventListener('click', function(e){
+			});
+
+var infospotCWB_10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_10.position.set( 2308.14, -72.07, 4424.71 );
+					infospotCWB_10.visible = false;
+					CWB_1.add(infospotCWB_10);
+infospotCWB_10.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+});
+var infospotCWB_11 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_11.position.set( 356.22, 159.93, -4975.05 );
+					infospotCWB_11.visible = false;
+					CWB_1.add(infospotCWB_11);
+infospotCWB_11.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+});
+var infospotCWB_12 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_12.position.set( 4924.74, 223.66, -768.81 );
+					CWB_1.add(infospotCWB_12);
+infospotCWB_12.addEventListener('click', function(){
+ChangePanorama('CWB_2');
+});
+viewer.add( CWB_1 );
+var CWB_2 = new PANOLENS.ImagePanorama( "panoramas/CWB_2.jpg" );
+			CWB_2.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CWB_2.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CWB_2.addEventListener('click', function(e){
+			});
+
+var infospotCWB_20 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_20.position.set( -4424.80, -1191.50, 1995.24 );
+					CWB_2.add(infospotCWB_20);
+infospotCWB_20.addEventListener('click', function(){
+ChangePanorama('CWB_1');
+});
+var infospotCWB_21 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_21.position.set( -4022.20, -526.68, 2916.75 );
+					infospotCWB_21.visible = false;
+					CWB_2.add(infospotCWB_21);
+infospotCWB_21.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+});
+var infospotCWB_22 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_22.position.set( -4807.11, -561.37, 1214.99 );
+					infospotCWB_22.visible = false;
+					CWB_2.add(infospotCWB_22);
+infospotCWB_22.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+});
+var infospotCWB_23 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_23.position.set( 1059.34, -1506.53, -4643.68 );
+					CWB_2.add(infospotCWB_23);
+infospotCWB_23.addEventListener('click', function(){
+ChangePanorama('CWB_5');
+});
+var infospotCWB_24 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_24.position.set( 4250.10, -1468.39, 2166.34 );
+					CWB_2.add(infospotCWB_24);
+infospotCWB_24.addEventListener('click', function(){
+ChangePanorama('CWB_3');
+});
+var infospotCWB_25 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_25.position.set( 4340.31, -1028.43, -2236.85 );
+					infospotCWB_25.visible = false;
+					CWB_2.add(infospotCWB_25);
+infospotCWB_25.addEventListener('click', function(){
+showMedia(4, 'pdf/CandiWringinBrajang.pdf');
+});
+viewer.add( CWB_2 );
+var CWB_3 = new PANOLENS.ImagePanorama( "panoramas/CWB_3.jpg" );
+			CWB_3.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CWB_3.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CWB_3.addEventListener('click', function(e){
+			});
+
+var infospotCWB_30 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_30.position.set( 1148.22, -1577.15, -4596.39 );
+					CWB_3.add(infospotCWB_30);
+infospotCWB_30.addEventListener('click', function(){
+ChangePanorama('CWB_2');
+});
+var infospotCWB_31 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_31.position.set( -1022.33, -1111.55, -4763.97 );
+					CWB_3.add(infospotCWB_31);
+infospotCWB_31.addEventListener('click', function(){
+ChangePanorama('CWB_1');
+});
+var infospotCWB_32 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_32.position.set( 4685.89, -1210.19, 1224.27 );
+					CWB_3.add(infospotCWB_32);
+infospotCWB_32.addEventListener('click', function(){
+ChangePanorama('CWB_4');
+});
+viewer.add( CWB_3 );
+var CWB_4 = new PANOLENS.ImagePanorama( "panoramas/CWB_4.jpg" );
+			CWB_4.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CWB_4.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CWB_4.addEventListener('click', function(e){
+			});
+
+var infospotCWB_40 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_40.position.set( 194.99, -1770.58, -4661.88 );
+					CWB_4.add(infospotCWB_40);
+infospotCWB_40.addEventListener('click', function(){
+ChangePanorama('CWB_3');
+});
+var infospotCWB_41 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_41.position.set( 4004.56, -1287.62, 2685.76 );
+					CWB_4.add(infospotCWB_41);
+infospotCWB_41.addEventListener('click', function(){
+ChangePanorama('CWB_5');
+});
+viewer.add( CWB_4 );
+var CWB_5 = new PANOLENS.ImagePanorama( "panoramas/CWB_5.jpg" );
+			CWB_5.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CWB_5.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CWB_5.addEventListener('click', function(e){
+			});
+
+var infospotCWB_50 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_50.position.set( 4382.45, -1039.51, 2149.30 );
+					CWB_5.add(infospotCWB_50);
+infospotCWB_50.addEventListener('click', function(){
+ChangePanorama('CWB_2');
+});
+var infospotCWB_51 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_51.position.set( 2325.84, -1328.92, -4212.92 );
+					CWB_5.add(infospotCWB_51);
+infospotCWB_51.addEventListener('click', function(){
+ChangePanorama('CWB_4');
+});
+var infospotCWB_52 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_52.position.set( 3496.62, 345.21, 3545.60 );
+					infospotCWB_52.visible = false;
+					CWB_5.add(infospotCWB_52);
+infospotCWB_52.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+});
+var infospotCWB_53 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCWB_53.position.set( 2299.95, 234.41, 4421.73 );
+					infospotCWB_53.visible = false;
+					CWB_5.add(infospotCWB_53);
+infospotCWB_53.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+});
+var infospotCWB_54 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCWB_54.position.set( 3149.40, -182.58, 3865.43 );
+					CWB_5.add(infospotCWB_54);
+infospotCWB_54.addEventListener('click', function(){
+ChangePanorama('CWB_1');
+});
+viewer.add( CWB_5 );
+$(document).ready(function(){ ChangePanorama('CWB_1'); });
+
+/*panoramas-end*/
+            
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == CWB_1){
+ShowMyInfospot(infospotCWB_10, 'infospotCWB_10');
+ShowMyInfospot(infospotCWB_11, 'infospotCWB_11');
+}
+
+if(viewer.panorama == CWB_2){
+ShowMyInfospot(infospotCWB_21, 'infospotCWB_21');
+ShowMyInfospot(infospotCWB_22, 'infospotCWB_22');
+ShowMyInfospot(infospotCWB_25, 'infospotCWB_25');
+}
+
+if(viewer.panorama == CWB_3){
+}
+
+if(viewer.panorama == CWB_4){
+}
+
+if(viewer.panorama == CWB_5){
+ShowMyInfospot(infospotCWB_52, 'infospotCWB_52');
+ShowMyInfospot(infospotCWB_53, 'infospotCWB_53');
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+					$("#loading").fadeOut();
+				}, 1000);
+				
+			}
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*/
+function chclickinfospotCWB_10(){ 
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+}
+
+function chclickinfospotCWB_11(){ 
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCWB_21(){ 
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+}
+
+function chclickinfospotCWB_22(){ 
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCWB_25(){ 
+showMedia(4, 'pdf/CandiWringinBrajang.pdf');
+}
+
+function chclickinfospotCWB_52(){ 
+window.open( 'https://goo.gl/maps/GitBwx7ek4fNfFZEA', '_blank');
+}
+
+function chclickinfospotCWB_53(){ 
+window.open( 'https://drive.google.com/file/d/1QbCPM4Ye8oVoUKFSdtF6YFZk1Cznnbio/view?usp=sharing', '_blank');
+}
+/*customjs-end*/
+        </script>
+	</body>
+</html>

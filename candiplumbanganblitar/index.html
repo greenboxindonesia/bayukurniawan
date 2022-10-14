@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>CANDIPLUMBANGANBLITAR</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='CPB_1'><div onclick='chclickinfospotCPB_10();' id='infospotCPB_10' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_11();' id='infospotCPB_11' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_18();' id='infospotCPB_18' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_19();' id='infospotCPB_19' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_2'><div onclick='chclickinfospotCPB_20();' id='infospotCPB_20' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_21();' id='infospotCPB_21' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_29();' id='infospotCPB_29' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_3'><div onclick='chclickinfospotCPB_30();' id='infospotCPB_30' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_31();' id='infospotCPB_31' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_32();' id='infospotCPB_32' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_4'><div onclick='chclickinfospotCPB_45();' id='infospotCPB_45' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Exit.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_5_'><div onclick='chclickinfospotCPB_5_3();' id='infospotCPB_5_3' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_5_4();' id='infospotCPB_5_4' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_6_'><div onclick='chclickinfospotCPB_6_3();' id='infospotCPB_6_3' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_6_4();' id='infospotCPB_6_4' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_7_'><div onclick='chclickinfospotCPB_7_2();' id='infospotCPB_7_2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_7_8();' id='infospotCPB_7_8' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_7_9();' id='infospotCPB_7_9' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_7_10();' id='infospotCPB_7_10' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='CPB_8'><div onclick='chclickinfospotCPB_81();' id='infospotCPB_81' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_85();' id='infospotCPB_85' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_86();' id='infospotCPB_86' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotCPB_89();' id='infospotCPB_89' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var CPB_1 = new PANOLENS.ImagePanorama( "panoramas/CPB_1.jpg" );
+			CPB_1.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_1.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_1.addEventListener('click', function(e){
+			});
+
+var infospotCPB_10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_10.position.set( 990.89, -417.43, -4879.85 );
+					infospotCPB_10.visible = false;
+					CPB_1.add(infospotCPB_10);
+infospotCPB_10.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_11 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_11.position.set( 976.52, -1109.68, -4772.61 );
+					infospotCPB_11.visible = false;
+					CPB_1.add(infospotCPB_11);
+infospotCPB_11.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_12 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_12.position.set( -1609.15, -1450.08, 4497.58 );
+					CPB_1.add(infospotCPB_12);
+infospotCPB_12.addEventListener('click', function(){
+ChangePanorama('CPB_6_');
+});
+var infospotCPB_13 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_13.position.set( 44.33, -1384.67, 4798.20 );
+					CPB_1.add(infospotCPB_13);
+infospotCPB_13.addEventListener('click', function(){
+ChangePanorama('CPB_7_');
+});
+var infospotCPB_14 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_14.position.set( 2444.14, -891.65, 4265.19 );
+					CPB_1.add(infospotCPB_14);
+infospotCPB_14.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_15 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_15.position.set( 3737.73, -790.55, -3218.16 );
+					CPB_1.add(infospotCPB_15);
+infospotCPB_15.addEventListener('click', function(){
+ChangePanorama('CPB_5_');
+});
+var infospotCPB_16 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_16.position.set( 3510.03, -278.56, 3535.89 );
+					CPB_1.add(infospotCPB_16);
+infospotCPB_16.addEventListener('click', function(){
+ChangePanorama('CPB_3');
+});
+var infospotCPB_17 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_17.position.set( 4789.91, -1169.62, 789.97 );
+					CPB_1.add(infospotCPB_17);
+infospotCPB_17.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_18 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_18.position.set( 4254.31, 2553.14, 566.46 );
+					infospotCPB_18.visible = false;
+					CPB_1.add(infospotCPB_18);
+infospotCPB_18.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+});
+var infospotCPB_19 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_19.position.set( -51.14, 627.55, 4954.06 );
+					infospotCPB_19.visible = false;
+					CPB_1.add(infospotCPB_19);
+infospotCPB_19.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+viewer.add( CPB_1 );
+var CPB_2 = new PANOLENS.ImagePanorama( "panoramas/CPB_2.jpg" );
+			CPB_2.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_2.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_2.addEventListener('click', function(e){
+			});
+
+var infospotCPB_20 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_20.position.set( -2960.49, -939.01, -3908.43 );
+					infospotCPB_20.visible = false;
+					CPB_2.add(infospotCPB_20);
+infospotCPB_20.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_21 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_21.position.set( -2854.76, -1560.73, -3791.36 );
+					infospotCPB_21.visible = false;
+					CPB_2.add(infospotCPB_21);
+infospotCPB_21.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_22 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_22.position.set( -4255.92, -2585.66, -425.58 );
+					CPB_2.add(infospotCPB_22);
+infospotCPB_22.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_23 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_23.position.set( 614.83, -1505.13, -4721.97 );
+					CPB_2.add(infospotCPB_23);
+infospotCPB_23.addEventListener('click', function(){
+ChangePanorama('CPB_5_');
+});
+var infospotCPB_24 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_24.position.set( 4990.14, -167.71, 62.49 );
+					CPB_2.add(infospotCPB_24);
+infospotCPB_24.addEventListener('click', function(){
+ChangePanorama('CPB_4');
+});
+var infospotCPB_25 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_25.position.set( -591.49, -1337.98, 4773.33 );
+					CPB_2.add(infospotCPB_25);
+infospotCPB_25.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_26 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_26.position.set( -2797.22, -1707.01, 3768.62 );
+					CPB_2.add(infospotCPB_26);
+infospotCPB_26.addEventListener('click', function(){
+ChangePanorama('CPB_7_');
+});
+var infospotCPB_27 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_27.position.set( -3439.75, -1606.53, 3244.01 );
+					CPB_2.add(infospotCPB_27);
+infospotCPB_27.addEventListener('click', function(){
+ChangePanorama('CPB_6_');
+});
+var infospotCPB_28 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_28.position.set( 2138.02, -521.97, 4480.09 );
+					CPB_2.add(infospotCPB_28);
+infospotCPB_28.addEventListener('click', function(){
+ChangePanorama('CPB_3');
+});
+var infospotCPB_29 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_29.position.set( -2996.89, -14.94, 3997.39 );
+					infospotCPB_29.visible = false;
+					CPB_2.add(infospotCPB_29);
+infospotCPB_29.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+viewer.add( CPB_2 );
+var CPB_3 = new PANOLENS.ImagePanorama( "panoramas/CPB_3.jpg" );
+			CPB_3.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_3.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_3.addEventListener('click', function(e){
+			});
+
+var infospotCPB_30 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_30.position.set( 3497.85, -393.41, -3541.58 );
+					infospotCPB_30.visible = false;
+					CPB_3.add(infospotCPB_30);
+infospotCPB_30.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_31 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_31.position.set( 3469.77, -806.34, -3497.88 );
+					infospotCPB_31.visible = false;
+					CPB_3.add(infospotCPB_31);
+infospotCPB_31.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_32 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_32.position.set( -2833.26, -716.16, -4049.71 );
+					infospotCPB_32.visible = false;
+					CPB_3.add(infospotCPB_32);
+infospotCPB_32.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+var infospotCPB_33 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_33.position.set( -3511.61, -2496.89, -2528.14 );
+					CPB_3.add(infospotCPB_33);
+infospotCPB_33.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_34 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_34.position.set( -2078.80, -1670.14, -4218.76 );
+					CPB_3.add(infospotCPB_34);
+infospotCPB_34.addEventListener('click', function(){
+ChangePanorama('CPB_7_');
+});
+var infospotCPB_35 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_35.position.set( -1677.77, -1287.95, -4520.15 );
+					CPB_3.add(infospotCPB_35);
+infospotCPB_35.addEventListener('click', function(){
+ChangePanorama('CPB_6_');
+});
+var infospotCPB_36 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_36.position.set( 3145.27, -2337.34, -3093.17 );
+					CPB_3.add(infospotCPB_36);
+infospotCPB_36.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_37 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_37.position.set( 1651.28, -1426.30, -4488.59 );
+					CPB_3.add(infospotCPB_37);
+infospotCPB_37.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_38 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_38.position.set( 2783.83, -1282.49, 3942.60 );
+					CPB_3.add(infospotCPB_38);
+infospotCPB_38.addEventListener('click', function(){
+ChangePanorama('CPB_4');
+});
+viewer.add( CPB_3 );
+var CPB_4 = new PANOLENS.ImagePanorama( "panoramas/CPB_4.jpg" );
+			CPB_4.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_4.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_4.addEventListener('click', function(e){
+			});
+
+var infospotCPB_40 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_40.position.set( 4831.05, -1251.09, -136.42 );
+					CPB_4.add(infospotCPB_40);
+infospotCPB_40.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_41 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_41.position.set( 4412.81, -2326.15, -205.03 );
+					CPB_4.add(infospotCPB_41);
+infospotCPB_41.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_42 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_42.position.set( 2479.13, -1481.97, -4073.48 );
+					CPB_4.add(infospotCPB_42);
+infospotCPB_42.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_43 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_43.position.set( 301.08, -1853.35, -4625.78 );
+					CPB_4.add(infospotCPB_43);
+infospotCPB_43.addEventListener('click', function(){
+ChangePanorama('CPB_3');
+});
+var infospotCPB_44 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_44.position.set( 2183.34, -1379.51, 4269.54 );
+					CPB_4.add(infospotCPB_44);
+infospotCPB_44.addEventListener('click', function(){
+ChangePanorama('CPB_5_');
+});
+var infospotCPB_45 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_45.position.set( 4990.14, -84.82, -124.52 );
+					infospotCPB_45.visible = false;
+					CPB_4.add(infospotCPB_45);
+infospotCPB_45.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+viewer.add( CPB_4 );
+var CPB_5_ = new PANOLENS.ImagePanorama( "panoramas/CPB_5_.jpg" );
+			CPB_5_.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_5_.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_5_.addEventListener('click', function(e){
+			});
+
+var infospotCPB_5_0 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_5_0.position.set( 4957.92, 478.33, -314.51 );
+					CPB_5_.add(infospotCPB_5_0);
+infospotCPB_5_0.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_5_1 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_5_1.position.set( 4312.62, 141.91, 2516.74 );
+					CPB_5_.add(infospotCPB_5_1);
+infospotCPB_5_1.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_5_2 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_5_2.position.set( 3249.64, 398.60, -3772.71 );
+					CPB_5_.add(infospotCPB_5_2);
+infospotCPB_5_2.addEventListener('click', function(){
+ChangePanorama('CPB_4');
+});
+var infospotCPB_5_3 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_5_3.position.set( 4548.76, 1673.99, 1188.12 );
+					infospotCPB_5_3.visible = false;
+					CPB_5_.add(infospotCPB_5_3);
+infospotCPB_5_3.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+var infospotCPB_5_4 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_5_4.position.set( 3338.10, 3433.49, -1418.94 );
+					infospotCPB_5_4.visible = false;
+					CPB_5_.add(infospotCPB_5_4);
+infospotCPB_5_4.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+});
+viewer.add( CPB_5_ );
+var CPB_6_ = new PANOLENS.ImagePanorama( "panoramas/CPB_6_.jpg" );
+			CPB_6_.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_6_.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_6_.addEventListener('click', function(e){
+			});
+
+var infospotCPB_6_0 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_0.position.set( 915.27, -2907.26, -3958.67 );
+					CPB_6_.add(infospotCPB_6_0);
+infospotCPB_6_0.addEventListener('click', function(){
+ChangePanorama('CPB_7_');
+});
+var infospotCPB_6_1 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_1.position.set( 969.85, -1313.09, -4720.50 );
+					CPB_6_.add(infospotCPB_6_1);
+infospotCPB_6_1.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_6_2 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_2.position.set( -4295.42, -2187.18, -1305.85 );
+					CPB_6_.add(infospotCPB_6_2);
+infospotCPB_6_2.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_6_3 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_6_3.position.set( -4736.46, -984.93, -1222.21 );
+					infospotCPB_6_3.visible = false;
+					CPB_6_.add(infospotCPB_6_3);
+infospotCPB_6_3.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_6_4 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_6_4.position.set( -4637.93, -1433.27, -1160.51 );
+					infospotCPB_6_4.visible = false;
+					CPB_6_.add(infospotCPB_6_4);
+infospotCPB_6_4.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_6_5 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_5.position.set( -2821.57, -1404.32, -3876.67 );
+					CPB_6_.add(infospotCPB_6_5);
+infospotCPB_6_5.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_6_6 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_6.position.set( -3912.41, -1400.90, -2769.08 );
+					CPB_6_.add(infospotCPB_6_6);
+infospotCPB_6_6.addEventListener('click', function(){
+ChangePanorama('CPB_5_');
+});
+var infospotCPB_6_7 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_6_7.position.set( 129.70, -640.13, -4948.46 );
+					CPB_6_.add(infospotCPB_6_7);
+infospotCPB_6_7.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+viewer.add( CPB_6_ );
+var CPB_7_ = new PANOLENS.ImagePanorama( "panoramas/CPB_7_.jpg" );
+			CPB_7_.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_7_.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_7_.addEventListener('click', function(e){
+			});
+
+var infospotCPB_7_0 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_0.position.set( 382.24, -2946.08, 4019.41 );
+					CPB_7_.add(infospotCPB_7_0);
+infospotCPB_7_0.addEventListener('click', function(){
+ChangePanorama('CPB_6_');
+});
+var infospotCPB_7_1 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_1.position.set( 363.19, -1994.72, -4562.88 );
+					CPB_7_.add(infospotCPB_7_1);
+infospotCPB_7_1.addEventListener('click', function(){
+ChangePanorama('CPB_8');
+});
+var infospotCPB_7_2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_7_2.position.set( -3880.65, 622.09, -3074.37 );
+					infospotCPB_7_2.visible = false;
+					CPB_7_.add(infospotCPB_7_2);
+infospotCPB_7_2.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+});
+var infospotCPB_7_3 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_3.position.set( -316.96, -1074.00, -4863.78 );
+					CPB_7_.add(infospotCPB_7_3);
+infospotCPB_7_3.addEventListener('click', function(){
+ChangePanorama('CPB_3');
+});
+var infospotCPB_7_4 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_4.position.set( -2602.05, -1227.62, -4079.07 );
+					CPB_7_.add(infospotCPB_7_4);
+infospotCPB_7_4.addEventListener('click', function(){
+ChangePanorama('CPB_4');
+});
+var infospotCPB_7_5 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_5.position.set( -3932.58, -2008.86, -2333.63 );
+					CPB_7_.add(infospotCPB_7_5);
+infospotCPB_7_5.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_7_6 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_6.position.set( -4272.66, -2247.83, 1282.92 );
+					CPB_7_.add(infospotCPB_7_6);
+infospotCPB_7_6.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_7_7 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_7_7.position.set( -4524.35, -1761.87, -1154.16 );
+					CPB_7_.add(infospotCPB_7_7);
+infospotCPB_7_7.addEventListener('click', function(){
+ChangePanorama('CPB_5_');
+});
+var infospotCPB_7_8 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_7_8.position.set( -4795.91, -1137.41, 794.21 );
+					infospotCPB_7_8.visible = false;
+					CPB_7_.add(infospotCPB_7_8);
+infospotCPB_7_8.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_7_9 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_7_9.position.set( -4655.72, -1598.21, 836.06 );
+					infospotCPB_7_9.visible = false;
+					CPB_7_.add(infospotCPB_7_9);
+infospotCPB_7_9.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_7_10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_7_10.position.set( 3646.18, 3412.87, -52.32 );
+					infospotCPB_7_10.visible = false;
+					CPB_7_.add(infospotCPB_7_10);
+infospotCPB_7_10.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+viewer.add( CPB_7_ );
+var CPB_8 = new PANOLENS.ImagePanorama( "panoramas/CPB_8.jpg" );
+			CPB_8.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			CPB_8.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			CPB_8.addEventListener('click', function(e){
+			});
+
+var infospotCPB_80 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_80.position.set( 889.07, -1938.08, -4518.26 );
+					CPB_8.add(infospotCPB_80);
+infospotCPB_80.addEventListener('click', function(){
+ChangePanorama('CPB_7_');
+});
+var infospotCPB_81 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_81.position.set( -930.56, -346.56, -4894.24 );
+					infospotCPB_81.visible = false;
+					CPB_8.add(infospotCPB_81);
+infospotCPB_81.addEventListener('click', function(){
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+});
+var infospotCPB_82 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_82.position.set( 825.96, -1553.12, -4674.14 );
+					CPB_8.add(infospotCPB_82);
+infospotCPB_82.addEventListener('click', function(){
+ChangePanorama('CPB_6_');
+});
+var infospotCPB_83 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_83.position.set( 4982.70, 279.41, -120.66 );
+					CPB_8.add(infospotCPB_83);
+infospotCPB_83.addEventListener('click', function(){
+ChangePanorama('CPB_2');
+});
+var infospotCPB_84 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_84.position.set( 3935.46, -155.80, -3064.59 );
+					CPB_8.add(infospotCPB_84);
+infospotCPB_84.addEventListener('click', function(){
+ChangePanorama('CPB_1');
+});
+var infospotCPB_85 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_85.position.set( 4432.77, 1035.02, -2052.50 );
+					infospotCPB_85.visible = false;
+					CPB_8.add(infospotCPB_85);
+infospotCPB_85.addEventListener('click', function(){
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+});
+var infospotCPB_86 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_86.position.set( 4536.76, 613.12, -1998.57 );
+					infospotCPB_86.visible = false;
+					CPB_8.add(infospotCPB_86);
+infospotCPB_86.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+});
+var infospotCPB_87 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_87.position.set( 1581.73, -850.98, 4660.73 );
+					CPB_8.add(infospotCPB_87);
+infospotCPB_87.addEventListener('click', function(){
+ChangePanorama('CPB_3');
+});
+var infospotCPB_88 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotCPB_88.position.set( 3266.13, 635.49, 3723.32 );
+					CPB_8.add(infospotCPB_88);
+infospotCPB_88.addEventListener('click', function(){
+ChangePanorama('CPB_4');
+});
+var infospotCPB_89 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotCPB_89.position.set( 3461.79, 3426.61, 1110.46 );
+					infospotCPB_89.visible = false;
+					CPB_8.add(infospotCPB_89);
+infospotCPB_89.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+});
+viewer.add( CPB_8 );
+$(document).ready(function(){ ChangePanorama('CPB_1'); });
+
+/*panoramas-end*/
+            
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == CPB_1){
+ShowMyInfospot(infospotCPB_10, 'infospotCPB_10');
+ShowMyInfospot(infospotCPB_11, 'infospotCPB_11');
+ShowMyInfospot(infospotCPB_18, 'infospotCPB_18');
+ShowMyInfospot(infospotCPB_19, 'infospotCPB_19');
+}
+
+if(viewer.panorama == CPB_2){
+ShowMyInfospot(infospotCPB_20, 'infospotCPB_20');
+ShowMyInfospot(infospotCPB_21, 'infospotCPB_21');
+ShowMyInfospot(infospotCPB_29, 'infospotCPB_29');
+}
+
+if(viewer.panorama == CPB_3){
+ShowMyInfospot(infospotCPB_30, 'infospotCPB_30');
+ShowMyInfospot(infospotCPB_31, 'infospotCPB_31');
+ShowMyInfospot(infospotCPB_32, 'infospotCPB_32');
+}
+
+if(viewer.panorama == CPB_4){
+ShowMyInfospot(infospotCPB_45, 'infospotCPB_45');
+}
+
+if(viewer.panorama == CPB_5_){
+ShowMyInfospot(infospotCPB_5_3, 'infospotCPB_5_3');
+ShowMyInfospot(infospotCPB_5_4, 'infospotCPB_5_4');
+}
+
+if(viewer.panorama == CPB_6_){
+ShowMyInfospot(infospotCPB_6_3, 'infospotCPB_6_3');
+ShowMyInfospot(infospotCPB_6_4, 'infospotCPB_6_4');
+}
+
+if(viewer.panorama == CPB_7_){
+ShowMyInfospot(infospotCPB_7_2, 'infospotCPB_7_2');
+ShowMyInfospot(infospotCPB_7_8, 'infospotCPB_7_8');
+ShowMyInfospot(infospotCPB_7_9, 'infospotCPB_7_9');
+ShowMyInfospot(infospotCPB_7_10, 'infospotCPB_7_10');
+}
+
+if(viewer.panorama == CPB_8){
+ShowMyInfospot(infospotCPB_81, 'infospotCPB_81');
+ShowMyInfospot(infospotCPB_85, 'infospotCPB_85');
+ShowMyInfospot(infospotCPB_86, 'infospotCPB_86');
+ShowMyInfospot(infospotCPB_89, 'infospotCPB_89');
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+					$("#loading").fadeOut();
+				}, 1000);
+				
+			}
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*/
+function chclickinfospotCPB_10(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_11(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_18(){ 
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_19(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_20(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_21(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_29(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_30(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_31(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_32(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_45(){ 
+ChangePanorama('CPB_1');
+}
+
+function chclickinfospotCPB_5_3(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_5_4(){ 
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_6_3(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_6_4(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_7_2(){ 
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_7_8(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_7_9(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_7_10(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_81(){ 
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/gapura-plumbangan-dan-sejarahnya/', '_blank');
+}
+
+function chclickinfospotCPB_85(){ 
+window.open( 'https://goo.gl/maps/ga2tqF71dYm4wqAp9', '_blank');
+}
+
+function chclickinfospotCPB_86(){ 
+window.open( 'https://drive.google.com/file/d/1pwp0gel2Ff22VNz_nMk67oyt43_josmE/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotCPB_89(){ 
+window.open( 'https://drive.google.com/file/d/13cJmPdwYKX8LJ8S9BCRt5wFXC0jh17wL/view?usp=sharing', '_blank');
+}
+/*customjs-end*/
+        </script>
+	</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>Candi Kotes</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='SAM_100_0468'><div onclick='chclickinfospotSAM_100_04682();' id='infospotSAM_100_04682' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotSAM_100_04683();' id='infospotSAM_100_04683' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='SAM_100_0467'><div onclick='chclickinfospotSAM_100_04673();' id='infospotSAM_100_04673' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Video.png' style='width: 64px; height: 64px;'></div><div onclick='chclickinfospotSAM_100_04674();' id='infospotSAM_100_04674' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Lokasi.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='SAM_100_0459'><div onclick='chclickinfospotSAM_100_04593();' id='infospotSAM_100_04593' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/Info.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='SAM_100_0460'></div><div class='customhotspot' id='SAM_100_0461'></div><div class='customhotspot' id='SAM_100_0455'></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var SAM_100_0468 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0468.jpg" );
+			SAM_100_0468.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0468.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0468.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04680 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04680.position.set( 4344.25, -958.22, 2259.84 );
+					SAM_100_0468.add(infospotSAM_100_04680);
+infospotSAM_100_04680.addEventListener('click', function(){
+ChangePanorama('SAM_100_0455');
+});
+var infospotSAM_100_04681 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04681.position.set( 4965.47, -353.73, 393.62 );
+					SAM_100_0468.add(infospotSAM_100_04681);
+infospotSAM_100_04681.addEventListener('click', function(){
+ChangePanorama('SAM_100_0467');
+});
+var infospotSAM_100_04682 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotSAM_100_04682.position.set( 4492.95, 849.76, 2015.47 );
+					infospotSAM_100_04682.visible = false;
+					SAM_100_0468.add(infospotSAM_100_04682);
+infospotSAM_100_04682.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1Jemzr5M2AKuQ05pHrzvj7LSjQHe937rm/view?usp=sharing', '_blank');
+});
+var infospotSAM_100_04683 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotSAM_100_04683.position.set( -3315.22, -1154.73, -3554.56 );
+					infospotSAM_100_04683.visible = false;
+					SAM_100_0468.add(infospotSAM_100_04683);
+infospotSAM_100_04683.addEventListener('click', function(){
+window.open( 'https://g.page/candi-kotes?share', '_blank');
+});
+viewer.add( SAM_100_0468 );
+var SAM_100_0467 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0467.jpg" );
+			SAM_100_0467.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0467.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0467.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04670 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04670.position.set( -1153.72, -2201.70, 4329.26 );
+					SAM_100_0467.add(infospotSAM_100_04670);
+infospotSAM_100_04670.addEventListener('click', function(){
+ChangePanorama('SAM_100_0455');
+});
+var infospotSAM_100_04671 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04671.position.set( -4752.92, -1340.53, 715.79 );
+					SAM_100_0467.add(infospotSAM_100_04671);
+infospotSAM_100_04671.addEventListener('click', function(){
+ChangePanorama('SAM_100_0468');
+});
+var infospotSAM_100_04672 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04672.position.set( 4956.49, 210.18, -571.68 );
+					SAM_100_0467.add(infospotSAM_100_04672);
+infospotSAM_100_04672.addEventListener('click', function(){
+ChangePanorama('SAM_100_0459');
+});
+var infospotSAM_100_04673 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotSAM_100_04673.position.set( 4829.87, 1155.09, -557.37 );
+					infospotSAM_100_04673.visible = false;
+					SAM_100_0467.add(infospotSAM_100_04673);
+infospotSAM_100_04673.addEventListener('click', function(){
+window.open( 'https://drive.google.com/file/d/1MASFmS5sv8VALOWbyJdrLFBGjYj8tjQv/view?usp=sharing', '_blank');
+});
+var infospotSAM_100_04674 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotSAM_100_04674.position.set( -4877.31, -783.82, -729.27 );
+					infospotSAM_100_04674.visible = false;
+					SAM_100_0467.add(infospotSAM_100_04674);
+infospotSAM_100_04674.addEventListener('click', function(){
+window.open( 'https://g.page/candi-kotes?share', '_blank');
+});
+viewer.add( SAM_100_0467 );
+var SAM_100_0459 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0459.jpg" );
+			SAM_100_0459.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0459.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0459.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04590 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04590.position.set( -3958.81, -2305.61, -1986.07 );
+					SAM_100_0459.add(infospotSAM_100_04590);
+infospotSAM_100_04590.addEventListener('click', function(){
+ChangePanorama('SAM_100_0467');
+});
+var infospotSAM_100_04591 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04591.position.set( -4853.15, -777.32, -887.61 );
+					SAM_100_0459.add(infospotSAM_100_04591);
+infospotSAM_100_04591.addEventListener('click', function(){
+ChangePanorama('SAM_100_0468');
+});
+var infospotSAM_100_04592 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04592.position.set( 4391.83, -2280.21, 673.96 );
+					SAM_100_0459.add(infospotSAM_100_04592);
+infospotSAM_100_04592.addEventListener('click', function(){
+ChangePanorama('SAM_100_0460');
+});
+var infospotSAM_100_04593 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotSAM_100_04593.position.set( -4158.14, -2032.50, 1879.60 );
+					infospotSAM_100_04593.visible = false;
+					SAM_100_0459.add(infospotSAM_100_04593);
+infospotSAM_100_04593.addEventListener('click', function(){
+showMedia(4, 'pdf/CandiKotes.pdf');
+});
+viewer.add( SAM_100_0459 );
+var SAM_100_0460 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0460.jpg" );
+			SAM_100_0460.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0460.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0460.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04600 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04600.position.set( -4254.94, -2125.01, -1516.11 );
+					SAM_100_0460.add(infospotSAM_100_04600);
+infospotSAM_100_04600.addEventListener('click', function(){
+ChangePanorama('SAM_100_0459');
+});
+var infospotSAM_100_04601 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04601.position.set( 4759.97, -1442.94, 460.22 );
+					SAM_100_0460.add(infospotSAM_100_04601);
+infospotSAM_100_04601.addEventListener('click', function(){
+ChangePanorama('SAM_100_0461');
+});
+viewer.add( SAM_100_0460 );
+var SAM_100_0461 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0461.jpg" );
+			SAM_100_0461.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0461.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0461.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04610 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04610.position.set( -3983.39, -3008.79, 126.45 );
+					SAM_100_0461.add(infospotSAM_100_04610);
+infospotSAM_100_04610.addEventListener('click', function(){
+ChangePanorama('SAM_100_0460');
+});
+var infospotSAM_100_04611 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04611.position.set( -4807.80, -1164.22, -685.11 );
+					SAM_100_0461.add(infospotSAM_100_04611);
+infospotSAM_100_04611.addEventListener('click', function(){
+ChangePanorama('SAM_100_0459');
+});
+viewer.add( SAM_100_0461 );
+var SAM_100_0455 = new PANOLENS.ImagePanorama( "panoramas/SAM_100_0455.jpg" );
+			SAM_100_0455.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			SAM_100_0455.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			SAM_100_0455.addEventListener('click', function(e){
+			});
+
+var infospotSAM_100_04550 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04550.position.set( -4264.93, -635.74, -2519.30 );
+					SAM_100_0455.add(infospotSAM_100_04550);
+infospotSAM_100_04550.addEventListener('click', function(){
+ChangePanorama('SAM_100_0468');
+});
+var infospotSAM_100_04551 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+					infospotSAM_100_04551.position.set( 3460.53, -1672.80, -3188.69 );
+					SAM_100_0455.add(infospotSAM_100_04551);
+infospotSAM_100_04551.addEventListener('click', function(){
+ChangePanorama('SAM_100_0467');
+});
+viewer.add( SAM_100_0455 );
+$(document).ready(function(){ ChangePanorama('SAM_100_0468'); });
+
+/*panoramas-end*/
+            
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == SAM_100_0468){
+ShowMyInfospot(infospotSAM_100_04682, 'infospotSAM_100_04682');
+ShowMyInfospot(infospotSAM_100_04683, 'infospotSAM_100_04683');
+}
+
+if(viewer.panorama == SAM_100_0467){
+ShowMyInfospot(infospotSAM_100_04673, 'infospotSAM_100_04673');
+ShowMyInfospot(infospotSAM_100_04674, 'infospotSAM_100_04674');
+}
+
+if(viewer.panorama == SAM_100_0459){
+ShowMyInfospot(infospotSAM_100_04593, 'infospotSAM_100_04593');
+}
+
+if(viewer.panorama == SAM_100_0460){
+}
+
+if(viewer.panorama == SAM_100_0461){
+}
+
+if(viewer.panorama == SAM_100_0455){
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+					$("#loading").fadeOut();
+				}, 1000);
+				
+			}
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*/
+function chclickinfospotSAM_100_04682(){ 
+window.open( 'https://drive.google.com/file/d/1Jemzr5M2AKuQ05pHrzvj7LSjQHe937rm/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotSAM_100_04683(){ 
+window.open( 'https://g.page/candi-kotes?share', '_blank');
+}
+
+function chclickinfospotSAM_100_04673(){ 
+window.open( 'https://drive.google.com/file/d/1MASFmS5sv8VALOWbyJdrLFBGjYj8tjQv/view?usp=sharing', '_blank');
+}
+
+function chclickinfospotSAM_100_04674(){ 
+window.open( 'https://g.page/candi-kotes?share', '_blank');
+}
+
+function chclickinfospotSAM_100_04593(){ 
+showMedia(4, 'pdf/CandiKotes.pdf');
+}
+/*customjs-end*/
+        </script>
+	</body>
+</html>

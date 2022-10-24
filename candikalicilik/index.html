@@ -15,8 +15,8 @@
 		
 		<script src="imagedata.js"></script>
 		<script src="jquery.js"></script>
-		<script src="three.min.js"></script>
-		<script src="panolens.min.js"></script>
+		<script src="https://raw.githubusercontent.com/pchen66/panolens.js/master/build/panolens.min.js"></script>
+  		<script src="https://threejs.org/build/three.min.js"></script>
 		
 		<!-- Insert this line after script imports -->
 		<script>if (window.module) module = window.module;</script>
@@ -96,7 +96,8 @@
 		<div id="tmp">
 			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
 			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
-		</div>
+		</div>
+
 
 		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
     		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
@@ -108,13 +109,16 @@
 			
             var container = document.querySelector( '#container' );
 			/*panolens*/
-var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
-/*panolens-end*/
+
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+
+/*panolens-end*/
 			
 			viewer.addUpdateCallback(function(){});
 			
 			/*panoramas*/
-var CKC_1 = new PANOLENS.ImagePanorama( "panoramas/CKC_1.jpg" );
+
+var CKC_1 = new PANOLENS.ImagePanorama( "panoramas/CKC_1.jpg" );
 			CKC_1.addEventListener('progress', function(e){
 				$("#loading").show();
 			});
@@ -124,34 +128,52 @@
 			CKC_1.addEventListener('click', function(e){
 			});
 
-var infospotCKC_10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospotCKC_10 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_10.position.set( 3672.99, 1563.83, 2999.12 );
 					infospotCKC_10.visible = false;
 					CKC_1.add(infospotCKC_10);
-infospotCKC_10.addEventListener('click', function(){
-window.open( 'https://goo.gl/maps/HMoYpXQmBMAXKuwNA', '_blank');
-});
-var infospotCKC_11 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_10.addEventListener('click', function(){
+
+window.open( 'https://goo.gl/maps/HMoYpXQmBMAXKuwNA', '_blank');
+
+});
+
+var infospotCKC_11 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_11.position.set( 4519.01, 237.13, 2108.80 );
 					CKC_1.add(infospotCKC_11);
-infospotCKC_11.addEventListener('click', function(){
-ChangePanorama('CKC_2');
-});
-var infospotCKC_12 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_11.addEventListener('click', function(){
+
+ChangePanorama('CKC_2');
+
+});
+
+var infospotCKC_12 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_12.position.set( 4532.65, -67.10, -2096.72 );
 					CKC_1.add(infospotCKC_12);
-infospotCKC_12.addEventListener('click', function(){
-ChangePanorama('CKC_5');
-});
-var infospotCKC_13 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotCKC_12.addEventListener('click', function(){
+
+ChangePanorama('CKC_5');
+
+});
+
+var infospotCKC_13 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_13.position.set( 3708.64, 3172.06, -1057.60 );
 					infospotCKC_13.visible = false;
 					CKC_1.add(infospotCKC_13);
-infospotCKC_13.addEventListener('click', function(){
-window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
-});
-viewer.add( CKC_1 );
-var CKC_2 = new PANOLENS.ImagePanorama( "panoramas/CKC_2.jpg" );
+
+infospotCKC_13.addEventListener('click', function(){
+
+window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
+
+});
+
+viewer.add( CKC_1 );
+
+var CKC_2 = new PANOLENS.ImagePanorama( "panoramas/CKC_2.jpg" );
 			CKC_2.addEventListener('progress', function(e){
 				$("#loading").show();
 			});
@@ -161,40 +183,62 @@
 			CKC_2.addEventListener('click', function(e){
 			});
 
-var infospotCKC_20 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+var infospotCKC_20 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_20.position.set( -1783.05, -558.77, -4626.37 );
 					CKC_2.add(infospotCKC_20);
-infospotCKC_20.addEventListener('click', function(){
-ChangePanorama('CKC_1');
-});
-var infospotCKC_21 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_20.addEventListener('click', function(){
+
+ChangePanorama('CKC_1');
+
+});
+
+var infospotCKC_21 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_21.position.set( 3487.97, -1012.91, 3421.65 );
 					CKC_2.add(infospotCKC_21);
-infospotCKC_21.addEventListener('click', function(){
-ChangePanorama('CKC_3');
-});
-var infospotCKC_22 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_21.addEventListener('click', function(){
+
+ChangePanorama('CKC_3');
+
+});
+
+var infospotCKC_22 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_22.position.set( 3469.80, -428.62, -3563.73 );
 					CKC_2.add(infospotCKC_22);
-infospotCKC_22.addEventListener('click', function(){
-ChangePanorama('CKC_5');
-});
-var infospotCKC_23 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotCKC_22.addEventListener('click', function(){
+
+ChangePanorama('CKC_5');
+
+});
+
+var infospotCKC_23 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_23.position.set( 1971.57, 4588.35, 175.34 );
 					infospotCKC_23.visible = false;
 					CKC_2.add(infospotCKC_23);
-infospotCKC_23.addEventListener('click', function(){
-window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
-});
-var infospotCKC_24 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotCKC_23.addEventListener('click', function(){
+
+window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
+
+});
+
+var infospotCKC_24 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_24.position.set( 4288.09, 1241.94, -2232.27 );
 					infospotCKC_24.visible = false;
 					CKC_2.add(infospotCKC_24);
-infospotCKC_24.addEventListener('click', function(){
-showMedia(4, 'pdf/CandiIndonesiaSeriJawa_removed.pdf');
-});
-viewer.add( CKC_2 );
-var CKC_3 = new PANOLENS.ImagePanorama( "panoramas/CKC_3.jpg" );
+
+infospotCKC_24.addEventListener('click', function(){
+
+showMedia(4, 'pdf/CandiIndonesiaSeriJawa_removed.pdf');
+
+});
+
+viewer.add( CKC_2 );
+
+var CKC_3 = new PANOLENS.ImagePanorama( "panoramas/CKC_3.jpg" );
 			CKC_3.addEventListener('progress', function(e){
 				$("#loading").show();
 			});
@@ -204,27 +248,41 @@
 			CKC_3.addEventListener('click', function(e){
 			});
 
-var infospotCKC_30 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+var infospotCKC_30 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_30.position.set( 2507.94, -680.09, -4266.06 );
 					CKC_3.add(infospotCKC_30);
-infospotCKC_30.addEventListener('click', function(){
-ChangePanorama('CKC_2');
-});
-var infospotCKC_31 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+
+infospotCKC_30.addEventListener('click', function(){
+
+ChangePanorama('CKC_2');
+
+});
+
+var infospotCKC_31 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
 					infospotCKC_31.position.set( 3502.50, -360.95, 3538.84 );
 					CKC_3.add(infospotCKC_31);
-infospotCKC_31.addEventListener('click', function(){
-ChangePanorama('CKC_4');
-});
-var infospotCKC_32 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotCKC_31.addEventListener('click', function(){
+
+ChangePanorama('CKC_4');
+
+});
+
+var infospotCKC_32 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_32.position.set( 4724.77, 1616.84, -77.00 );
 					infospotCKC_32.visible = false;
 					CKC_3.add(infospotCKC_32);
-infospotCKC_32.addEventListener('click', function(){
-window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/sejarah-candi-kalicilik/', '_blank');
-});
-viewer.add( CKC_3 );
-var CKC_4 = new PANOLENS.ImagePanorama( "panoramas/CKC_4.jpg" );
+
+infospotCKC_32.addEventListener('click', function(){
+
+window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/sejarah-candi-kalicilik/', '_blank');
+
+});
+
+viewer.add( CKC_3 );
+
+var CKC_4 = new PANOLENS.ImagePanorama( "panoramas/CKC_4.jpg" );
 			CKC_4.addEventListener('progress', function(e){
 				$("#loading").show();
 			});
@@ -234,26 +292,39 @@
 			CKC_4.addEventListener('click', function(e){
 			});
 
-var infospotCKC_40 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+var infospotCKC_40 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_40.position.set( 2789.42, -601.68, -4094.31 );
 					CKC_4.add(infospotCKC_40);
-infospotCKC_40.addEventListener('click', function(){
-ChangePanorama('CKC_3');
-});
-var infospotCKC_41 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_40.addEventListener('click', function(){
+
+ChangePanorama('CKC_3');
+
+});
+
+var infospotCKC_41 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_41.position.set( 4051.72, -624.28, 2850.10 );
 					CKC_4.add(infospotCKC_41);
-infospotCKC_41.addEventListener('click', function(){
-ChangePanorama('CKC_5');
-});
-var infospotCKC_42 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospotCKC_41.addEventListener('click', function(){
+
+ChangePanorama('CKC_5');
+
+});
+
+var infospotCKC_42 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospotCKC_42.position.set( 4479.19, -385.44, -2174.13 );
 					infospotCKC_42.visible = false;
 					CKC_4.add(infospotCKC_42);
-infospotCKC_42.addEventListener('click', function(){
-});
-viewer.add( CKC_4 );
-var CKC_5 = new PANOLENS.ImagePanorama( "panoramas/CKC_5.jpg" );
+
+infospotCKC_42.addEventListener('click', function(){
+
+});
+
+viewer.add( CKC_4 );
+
+var CKC_5 = new PANOLENS.ImagePanorama( "panoramas/CKC_5.jpg" );
 			CKC_5.addEventListener('progress', function(e){
 				$("#loading").show();
 			});
@@ -263,28 +334,43 @@
 			CKC_5.addEventListener('click', function(e){
 			});
 
-var infospotCKC_50 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+
+var infospotCKC_50 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
 					infospotCKC_50.position.set( 3130.77, -1039.64, -3744.82 );
 					CKC_5.add(infospotCKC_50);
-infospotCKC_50.addEventListener('click', function(){
-ChangePanorama('CKC_4');
-});
-var infospotCKC_51 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_50.addEventListener('click', function(){
+
+ChangePanorama('CKC_4');
+
+});
+
+var infospotCKC_51 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_51.position.set( 2727.90, -311.47, 4167.56 );
 					CKC_5.add(infospotCKC_51);
-infospotCKC_51.addEventListener('click', function(){
-ChangePanorama('CKC_2');
-});
-var infospotCKC_52 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
+
+infospotCKC_51.addEventListener('click', function(){
+
+ChangePanorama('CKC_2');
+
+});
+
+var infospotCKC_52 = new PANOLENS.Infospot( 512, hotspotIcons[12].data, true );
 					infospotCKC_52.position.set( -1202.53, -773.58, 4784.48 );
 					CKC_5.add(infospotCKC_52);
-infospotCKC_52.addEventListener('click', function(){
-ChangePanorama('CKC_1');
-});
-viewer.add( CKC_5 );
-$(document).ready(function(){ ChangePanorama('CKC_1'); });
 
-/*panoramas-end*/
+infospotCKC_52.addEventListener('click', function(){
+
+ChangePanorama('CKC_1');
+
+});
+
+viewer.add( CKC_5 );
+
+$(document).ready(function(){ ChangePanorama('CKC_1'); });
+
+
+/*panoramas-end*/
             
 			
 			function hideTemp(){
@@ -417,23 +503,28 @@ if(viewer.panorama == CKC_5){
 			/*customjs*/
 function chclickinfospotCKC_10(){ 
 window.open( 'https://goo.gl/maps/HMoYpXQmBMAXKuwNA', '_blank');
-}
+
+}
 
 function chclickinfospotCKC_13(){ 
 window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
-}
+
+}
 
 function chclickinfospotCKC_23(){ 
 window.open( 'https://drive.google.com/file/d/11X66ORrI13yZsaLZAGykvGY0Ffu-MoUL/view?usp=sharing', '_blank');
-}
+
+}
 
 function chclickinfospotCKC_24(){ 
 showMedia(4, 'pdf/CandiIndonesiaSeriJawa_removed.pdf');
-}
+
+}
 
 function chclickinfospotCKC_32(){ 
 window.open( 'https://kebudayaan.kemdikbud.go.id/bpcbjatim/sejarah-candi-kalicilik/', '_blank');
-}
+
+}
 
 function chclickinfospotCKC_42(){ 
 }
